@@ -73,16 +73,15 @@
         <div class="container">
             <div class="title">Registration</div>
             <div class="content">
-                <form action="#" onsubmit="return saveSignup()">
+                <form action="#" onSubmit="return checkPassword(this)">
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Username</span>
-                            <input type="text" minlength="3" maxlength="15" placeholder="Enter your username"
-                                id="txtName" required>
+                            <input type="text" minlength="3" maxlength="15" placeholder="Enter your username" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Profile Picture</span>
-                            <input type="text" placeholder="Enter your number" id="txt" required>
+                            <input type="image" placeholder="Enter your number" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Password</span>
