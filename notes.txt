@@ -1,1 +1,13 @@
-
+// Meme ID Formula Key //
+--------------------------------------------------------------------------
+ | # | Example | Meaning                                                |
+-|---|---------|--------------------------------------------------------|-
+ | 1 | 6       | Weekday in number form                                 |
+ | 2 | 12      | Day of upload                                          |
+ | 2 | 07      | Month of upload                                        |
+ | 2 | 23      | Year of upload                                         |
+ | 2 | 12      | Hour of upload                                         |
+ | 2 | 09      | Minute of upload                                       |
+ | 2 | 59      | Second of upload                                       |
+--------------------------------------------------------------------------
+All meme IDs are 13 didgets long.
