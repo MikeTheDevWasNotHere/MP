@@ -1,1 +1,152 @@
-
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css">
+        <link rel="stylesheet" type="text/css" href="Assets/CSS/memecard.css">
+        <link rel="stylesheet" type="text/css" href="Assets/CSS/sidebar.css">
+        <title>Meme World</title>
+    </head>
+    <body onload="search_jsonData()">
+        <div class="sidebar">
+            <div class="logo-details">
+                <i class="ti ti-mood-happy icon"></i>
+                <div class="logo_name">Meme World</div>
+                <i class="ti ti-menu-2" id="btn" ></i>
+            </div>
+            <ul class="nav-list">
+                <li>
+                    <i class="ti ti-search bx bx-search"></i>
+                    <input type="text" placeholder="Search Memes..." id="searchbar" onkeyup="search_jsonData()">
+                    <span class="tooltip">Search Memes</span>
+                </li>
+                <li>
+                    <a href="#">
+                    <i class="ti ti-home"></i>
+                    <span class="links_name">Home</span>
+                    </a>
+                    <span class="tooltip">Home</span>
+                </li>
+                <li>
+                    <a href="#">
+                    <i class="ti ti-apps"></i>
+                    <span class="links_name">Categories</span>
+                    </a>
+                    <span class="tooltip">Categories</span>
+                </li>
+                <li>
+                    <a href="#">
+                    <i class="ti ti-square-plus"></i>
+                    <span class="links_name">Creative</span>
+                    </a>
+                    <span class="tooltip">Creative Center</span>
+                </li>
+                <li>
+                    <a href="#">
+                    <i class="ti ti-books"></i>
+                    <span class="links_name">Library</span>
+                    </a>
+                    <span class="tooltip">Library</span>
+                </li>
+                <li class="profile">
+                    <div class="profile-details">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1K8ypPsfNVQU8lVxl1i2_ajismMS_w6FA4Q&usqp=CAU" alt="profileImg">
+                        <div class="name_job">
+                            <div class="name">Welcome!</div>
+                            <div class="job">V00.0.01</div>
+                        </div>
+                    </div>
+                    <i class="ti ti-help" id="log_out" ></i>
+                </li>
+            </ul>
+        </div>
+        <section class="home-section">
+            <div class="text">Main Content</div>
+            <br>
+            <ul id="list-holder">
+            </ul>
+        </section>
+        <script src="Assets/JS/sidebar.js"></script>
+        <script>
+            /*
+                // Meme ID Formula Key //
+                ------------------------------------------------------------------------
+                 # | Example | Meaning                                                |
+                ---|---------|--------------------------------------------------------|-
+                 1 | 6       | Weekday in number form                                 |
+                 2 | 12      | Day of upload                                          |
+                 2 | 07      | Month of upload                                        |
+                 2 | 23      | Year of upload                                         |
+                 2 | 12      | Hour of upload                                         |
+                 2 | 09      | Minute of upload                                       |
+                ---|---------|--------------------------------------------------------|-
+                All meme IDs are 11 didgets long.
+            */
+            
+            let jsonData = `[
+                {
+                    "Title": "Wow",
+                    "Meme": "https://i.ytimg.com/vi/sSpDnIJxyXM/maxresdefault.jpg",
+                    "PFP": "https://flyinryanhawks.org/wp-content/uploads/2016/08/profile-placeholder.png",
+            
+                    "Search": {
+                        "ID": "20702231205",
+                        "D1": "2/7/23"
+                    }
+                },
+                {
+                    "Title": "Fr",
+                    "Meme": "https://cdn.memes.com/up/33436521601415506/i/1675679759926.jpg",
+                    "PFP": "https://flyinryanhawks.org/wp-content/uploads/2016/08/profile-placeholder.png",
+            
+            		"Search": {
+						"ID": "20702231259",
+						"D1": "2/7/23"
+					}
+                },
+            	{
+					"Title": "Why tho",
+					"Meme": "https://www.letseatcake.com/wp-content/uploads/2022/06/Marvel-Memes-social.jpg",
+					"PFP": "https://flyinryanhawks.org/wp-content/uploads/2016/08/profile-placeholder.png",
+					
+            		"Search": {
+						"ID": "30807230903",
+						"D1": "2/8/23"
+            		}
+            	}
+            ]`
+            
+            let data = JSON.parse(jsonData)
+            
+            function search_jsonData() {
+                let input = document.getElementById('searchbar').value
+                input = input.toLowerCase();
+                let x = document.querySelector('#list-holder');
+                x.innerHTML = ""
+            
+                for (i = 0; i < data.length; i++) {
+                    let obj = data[i];
+            
+                    if (obj.Title.toLowerCase().includes(input) || obj.Search.ID.toLowerCase().includes(input) || obj.Search.D1.toLowerCase().includes(input)) {
+                        const elem = document.createElement("p");
+            
+                        elem.innerHTML = `
+                          <div class="card">
+                            <div class="image-box">
+                              <img src="${obj.Meme}" alt="">
+                             </div>
+            
+                            <div class="card-content">
+                              <span class="tag">#Tag</span>
+                              <h2 class="card-title">${obj.Title}</h2>
+                              <small class="sub-title">Lorem, ipsum dolor.</small>
+                              <button class="btn">Options</button>
+                            </div>
+                          </div>
+            			<br>`
+                        x.appendChild(elem);
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
