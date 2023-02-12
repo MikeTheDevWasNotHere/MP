@@ -1,1 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../../Assets/CSS/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="../../Assets/CSS/signup.css">
+
+    <title>Meme World</title>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class="ti ti-mood-happy icon"></i>
+            <div class="logo_name">Meme World</div>
+            <i class="ti ti-menu-2" id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <i class="ti ti-search bx bx-search"></i>
+                <input type="text" placeholder="Search Memes..." id="searchbar">
+                <span class="tooltip">Search Memes</span>
+            </li>
+            <li>
+                <a href="../../index.html">
+                    <i class="ti ti-home"></i>
+                    <span class="links_name">Home</span>
+                </a>
+                <span class="tooltip">Home</span>
+            </li>
+            <li>
+                <a href="../../Pages/Categories/categories.html">
+                    <i class="ti ti-apps"></i>
+                    <span class="links_name">Categories</span>
+                </a>
+                <span class="tooltip">Categories</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="ti ti-square-plus"></i>
+                    <span class="links_name">Creative</span>
+                </a>
+                <span class="tooltip">Creative Center</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="ti ti-books"></i>
+                    <span class="links_name">Library</span>
+                </a>
+                <span class="tooltip">Library</span>
+            </li>
+            <li class="profile">
+                <div class="profile-details">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1K8ypPsfNVQU8lVxl1i2_ajismMS_w6FA4Q&usqp=CAU"
+                        alt="profileImg">
+                    <div class="name_job">
+                        <div class="name">Welcome!</div>
+                        <div class="job">V00.0.01</div>
+                    </div>
+                </div>
+                <i class="ti ti-help" id="log_out"></i>
+            </li>
+        </ul>
+    </div>
+
+    <section class="home-section">
+        <div class="text">Main Content</div>
+
+        <br>
+
+        <div class="container">
+            <div class="title">Registration</div>
+            <div class="content">
+                <form action="#" onsubmit="return saveSignup()">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">Username</span>
+                            <input type="text" minlength="3" maxlength="15" placeholder="Enter your username"
+                                id="txtName" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Profile Picture</span>
+                            <input type="text" placeholder="Enter your number" id="txt" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Password</span>
+                            <input type="text" placeholder="Enter your password" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Confirm Password</span>
+                            <input type="text" placeholder="Confirm your password" required>
+                        </div>
+                    </div>
+                    <div class="gender-details">
+                        <input type="radio" name="gender" id="dot-1">
+                        <input type="radio" name="gender" id="dot-2">
+                        <input type="radio" name="gender" id="dot-3">
+                        <span class="gender-title">Age</span>
+                        <div class="category">
+                            <label for="dot-1">
+                                <span class="dot one"></span>
+                                <span class="gender">7yo - 12yo</span>
+                            </label>
+                            <label for="dot-2">
+                                <span class="dot two"></span>
+                                <span class="gender">13yo - 17yo</span>
+                            </label>
+                            <label for="dot-3">
+                                <span class="dot three"></span>
+                                <span class="gender">18yo +</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Register">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="../../Assets/JS/sidebar.js"></script>
+    <script src="../../Assets/JS/signup.js"></script>
+
+    <script>
+
+    </script>
+</body>
+
+</html>
