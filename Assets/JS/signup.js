@@ -43,7 +43,7 @@ function checkPassword(form) {
 
         const fs = require('fs');
         
-        fs.writeFile('MP/Database/Accounts/accounts.js', data, err => {
+        fs.writeFile('../../Database/Accounts/accounts.js', data, err => {
             if (err) {
             console.error(err);
             }
